@@ -107,13 +107,8 @@ public class HotelService {
     }
 
     //Finding Hotel By City
-    public Hotel getHotelByCity(String city) {
-        Optional<Hotel> hotel = hotelRepository.findByCity(city);
-        if (hotel.isPresent()) {
-            return hotel.get();
-        } else {
-            throw new RuntimeException("Hotel with id " + city + " not found");
-        }
+    public List<Hotel> findHotelsByCity(String city) {
+        return hotelRepository.findByCity(city);
     }
 
     //Finding Hotel By Price
