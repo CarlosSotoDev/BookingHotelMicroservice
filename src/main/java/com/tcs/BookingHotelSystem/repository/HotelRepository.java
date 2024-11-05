@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -13,7 +14,7 @@ public interface HotelRepository extends JpaRepository<Hotel, Integer> {
     //Must to be the same like the atributs from model
     Optional<Hotel> findByHotelName(String hotelName);
 
-    Optional<Hotel> findByCity(String city);
+    List<Hotel> findByCity(String city);
 
     Optional<Hotel> findByPricePerNight(BigDecimal pricePerNight);
 
